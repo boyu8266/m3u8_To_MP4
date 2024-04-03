@@ -12,7 +12,7 @@ async def available_addr_infos_of_url(url):
     scheme, netloc, path, query, fragment = urllib.parse.urlsplit(url)
 
     # todo:: support IPv6
-    addr_infos = await loop.getaddrinfo(host=netloc, port=scheme,
+    addr_infos = await loop.getaddrinfo(host=netloc, port=443,
                                         family=socket.AF_INET)
 
     available_addr_info_pool = list()
